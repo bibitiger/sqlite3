@@ -1,5 +1,5 @@
-/Users/fanxu/sql3/obj/local/armeabi/objs/sqlite3_static/mainForNode.o: \
- /Users/fanxu/sql3/jni/mainForNode.cpp \
+/Users/fanxu/dbtest/sqlite3/obj/local/armeabi/objs/sqlite3_static/mainForNode.o: \
+ /Users/fanxu/dbtest/sqlite3/jni/mainForNode.cpp \
  /Users/fanxu/workSoft/forAndroid/android-ndk-r12b/sources/cxx-stl/stlport/stlport/iostream \
  /Users/fanxu/workSoft/forAndroid/android-ndk-r12b/sources/cxx-stl/stlport/stlport/stl/_prolog.h \
  /Users/fanxu/workSoft/forAndroid/android-ndk-r12b/sources/cxx-stl/stlport/stlport/stl/_cprolog.h \
@@ -93,8 +93,8 @@
  /Users/fanxu/workSoft/forAndroid/android-ndk-r12b/sources/cxx-stl/stlport/stlport/stl/_num_get.c \
  /Users/fanxu/workSoft/forAndroid/android-ndk-r12b/sources/cxx-stl/stlport/stlport/stl/_epilog.h \
  /Users/fanxu/workSoft/forAndroid/android-ndk-r12b/sources/cxx-stl/stlport/stlport/stl/_config_compat_post.h \
- /Users/fanxu/sql3/jni/mainForNode.h \
- /Users/fanxu/sql3/jni/include/sqlite3.h
+ /Users/fanxu/dbtest/sqlite3/jni/mainForNode.h \
+ /Users/fanxu/dbtest/sqlite3/jni/include/sqlite3.h
 
 /Users/fanxu/workSoft/forAndroid/android-ndk-r12b/sources/cxx-stl/stlport/stlport/iostream:
 
@@ -282,6 +282,6 @@
 
 /Users/fanxu/workSoft/forAndroid/android-ndk-r12b/sources/cxx-stl/stlport/stlport/stl/_config_compat_post.h:
 
-/Users/fanxu/sql3/jni/mainForNode.h:
+/Users/fanxu/dbtest/sqlite3/jni/mainForNode.h:
 
-/Users/fanxu/sql3/jni/include/sqlite3.h:
+/Users/fanxu/dbtest/sqlite3/jni/include/sqlite3.h:
