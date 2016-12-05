@@ -143,7 +143,7 @@ bool CForNode::sqlInsert(char* table, char* format, char* content) {
 
 	char sql[300+3*1024*1024];
 	memset(sql,0,sizeof(sql));
-	sprintf(sql,"insert into %s (%s) values (%s)", table, format, content);
+	sprintf(sql,"replace into %s (%s) values (%s)", table, format, content);
 	cout<<sql<<endl;
 	char* error = NULL;
 	int ret = sqlite3_exec(_db, sql, NULL, NULL, &error);
