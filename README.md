@@ -2,9 +2,9 @@
 
 ##command example:
 
->create table: ./sql test1.db 0 users "id INTEGER PREIMARY KEY AUTOINCRMENT , name TEXT, score TEXT"
+>create table: ./sql test1.db 0 users "id integer primary key autoincrement unique, name TEXT, score TEXT"
 
->insert: ./sql test1.db 1 users "name , score" "'zhangqiang', '32'"
+>insert: ./sql test1.db 1 users "id, name , score" "null, 'zhangqiang', '32'"
 
 >delete: ./sql test1.db 2 users "score = '32'"
 
@@ -20,7 +20,7 @@
 
 command | exec| db path| command tag| table name| format| cotent| condition
 --------|------|------|---------|----------------|-------|------|-----------
-create table:| ./sql| test1.db| 0| users| "id INTEGER PREIMARY KEY AUTOINCRMENT , name TEXT, score TEXT"
+create table:| ./sql| test1.db| 0| users| "id integer primary key autoincrement unique , name TEXT, score TEXT"
 insert:| ./sql| test1.db |1 |users| "name , score" |"'zhangqiang', '32'"
 delete:| ./sql |test1.db |2| users||| "score = '32'"
 update:| ./sql| test1.db| 3| users ||"score = '45'"| "name = 'zhangqiang'"
