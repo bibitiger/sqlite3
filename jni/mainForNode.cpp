@@ -233,7 +233,7 @@ bool CForNode::sqlSelect(char* table, char* condition) {
 
 	char sql[300+1024*1024];
 	memset(sql,0,sizeof(sql));
-	sprintf(sql,"select * from %s where %s", table, condition);
+	sprintf(sql,"select rowid, * from %s where %s", table, condition);
 	char* error = NULL;
 	int ret = sqlite3_exec(_db, sql, CForNode::callback, NULL, &error);
 	if(ret == SQLITE_OK)
@@ -256,7 +256,7 @@ bool CForNode::sqlSelectAll(char* table) {
 
 	char sql[300];
 	memset(sql,0,sizeof(sql));
-	sprintf(sql,"select * from %s", table);
+	sprintf(sql,"select rowid, * from %s", table);
 	char* error = NULL;
 	int ret = sqlite3_exec(_db, sql, CForNode::callback, NULL, &error);
 	if(ret == SQLITE_OK)
