@@ -1,5 +1,4 @@
-/Volumes/DiskMac/fanxu/dbtest/sqlite3/obj/local/armeabi/objs/sqlite3_static/src/sqlite3.o: \
- /Volumes/DiskMac/fanxu/dbtest/sqlite3/jni/src/sqlite3.c \
+obj/local/armeabi/objs/sqlite3_static/src/sqlite3.o: jni/src/sqlite3.c \
  /Volumes/DiskMac/fanxu/workSoft/forAndroid/android-ndk-r12b/sources/cxx-stl/stlport/stlport/stdarg.h \
  /Volumes/DiskMac/fanxu/workSoft/forAndroid/android-ndk-r12b/sources/cxx-stl/stlport/stlport/stl/_cprolog.h \
  /Volumes/DiskMac/fanxu/workSoft/forAndroid/android-ndk-r12b/sources/cxx-stl/stlport/stlport/stl/config/features.h \
