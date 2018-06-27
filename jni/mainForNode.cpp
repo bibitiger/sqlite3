@@ -111,8 +111,9 @@ bool CForNode::createTable(char* table, char* tableFormat) {
 	char sql[300];
 	memset(sql,0,sizeof(sql));
 	sprintf(sql,"create table if not exists %s(%s)", table, tableFormat);
+	cout<<sql<<endl;
 	char* error = NULL;
-	int ret = sqlite3_exec(_db, sql, NULL, NULL, &error);
+	int ret = sqlite3_exec(_db, sql, CForNode::callback, NULL, &error);
 	if(ret == SQLITE_OK)
 		cout<<"createTable success"<<endl;
 	else{
@@ -146,7 +147,7 @@ bool CForNode::sqlInsert(char* table, char* format, char* content) {
 	sprintf(sql,"replace into %s (%s) values (%s)", table, format, content);
 	cout<<sql<<endl;
 	char* error = NULL;
-	int ret = sqlite3_exec(_db, sql, NULL, NULL, &error);
+	int ret = sqlite3_exec(_db, sql, CForNode::callback, NULL, &error);
 	if(ret == SQLITE_OK)
 		cout<<"sqlInsert success"<<endl;
 	else{
@@ -173,8 +174,9 @@ bool CForNode::sqlDelete(char* table, char* condition) {
 	char sql[300+1024*1024];
 	memset(sql,0,sizeof(sql));
 	sprintf(sql,"delete from %s where %s", table, condition);
+	cout<<sql<<endl;
 	char* error = NULL;
-	int ret = sqlite3_exec(_db, sql, NULL, NULL, &error);
+	int ret = sqlite3_exec(_db, sql, CForNode::callback, NULL, &error);
 	if(ret == SQLITE_OK)
 		cout<<"sqlDelete success"<<endl;
 	else{
@@ -206,8 +208,9 @@ bool CForNode::sqlUpdate(char* table, char* content, char* condition) {
 	char sql[300+3*1024*1024];
 	memset(sql,0,sizeof(sql));
 	sprintf(sql,"update %s set %s where %s", table, content, condition);
+	cout<<sql<<endl;
 	char* error = NULL;
-	int ret = sqlite3_exec(_db, sql, NULL, NULL, &error);
+	int ret = sqlite3_exec(_db, sql, CForNode::callback, NULL, &error);
 	if(ret == SQLITE_OK)
 		cout<<"sqlUpdate success"<<endl;
 	else{
@@ -233,7 +236,8 @@ bool CForNode::sqlSelect(char* table, char* condition) {
 
 	char sql[300+1024*1024];
 	memset(sql,0,sizeof(sql));
-	sprintf(sql,"select * from %s where %s", table, condition);
+	sprintf(sql,"select rowid,* from %s where %s", table, condition);
+	cout<<sql<<endl;
 	char* error = NULL;
 	int ret = sqlite3_exec(_db, sql, CForNode::callback, NULL, &error);
 	if(ret == SQLITE_OK)
@@ -256,8 +260,10 @@ bool CForNode::sqlSelectAll(char* table) {
 
 	char sql[300];
 	memset(sql,0,sizeof(sql));
-	sprintf(sql,"select * from %s", table);
+	sprintf(sql,"select rowid,* from %s", table);
+	cout<<sql<<endl;
 	char* error = NULL;
+	sqlite3_exec(_db, ".mode tabs", NULL, NULL, &error);
 	int ret = sqlite3_exec(_db, sql, CForNode::callback, NULL, &error);
 	if(ret == SQLITE_OK)
 		cout<<"sqlSelectAll success"<<endl;
